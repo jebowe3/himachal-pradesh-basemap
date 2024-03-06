@@ -39,6 +39,11 @@
       style: {
         version: 8,
         sources: {
+          // add the data/water.geojson source to the map
+          water: {
+            type: 'geojson',
+            data: 'data/water.geojson'
+          },
           topo: {
             type: "raster",
             url: "pmtiles://data/himachal-hs.pmtiles",
@@ -64,6 +69,13 @@
             id: "topo",
             type: "raster",
             source: "topo",
+          },
+          {
+            id: "water",
+            type: "fill",
+            source: "water",
+            layout: { visibility: "visible" },
+            paint: { "fill-color": "#a6cee3" },
           },
           /*
           {
