@@ -44,6 +44,11 @@
             type: 'geojson',
             data: 'data/water.geojson'
           },
+          // add the data/forest.geojson source to the map
+          forest: {
+            type: 'geojson',
+            data: 'data/forest.geojson'
+          },
           topo: {
             type: "raster",
             url: "pmtiles://data/himachal-hs.pmtiles",
@@ -76,6 +81,15 @@
             source: "water",
             layout: { visibility: "visible" },
             paint: { "fill-color": "#a6cee3" },
+          },
+          {
+            id: "forest",
+            type: "fill",
+            source: "forest",
+            layout: { visibility: "visible" },
+            paint: { "fill-color": "#1b5117" },
+            // add 20% opacity to the forest layer
+            paint: { "fill-opacity": 0.15 },
           },
           /*
           {
